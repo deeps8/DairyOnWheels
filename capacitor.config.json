@@ -1,0 +1,13 @@
+{
+  "appId": "com.dairyOnWheels.app",
+  "appName": "Dairy On Wheels",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www",
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 0
+    }
+  },
+  "cordova": {}
+}

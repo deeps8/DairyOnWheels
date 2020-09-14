@@ -1,0 +1,7 @@
+{
+  "name": "Dairy On Wheels",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
