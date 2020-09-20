@@ -16,7 +16,7 @@
 @import "~@ionic/angular/css/normalize.css";
 @import "~@ionic/angular/css/structure.css";
 @import "~@ionic/angular/css/typography.css";
-@import '~@ionic/angular/css/display.css';
+@import "~@ionic/angular/css/display.css";
 
 /* Optional CSS utils that can be commented out */
 @import "~@ionic/angular/css/padding.css";
@@ -24,3 +24,85 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+ion-header {
+  ion-toolbar {
+    ion-title {
+      padding-inline-start: 50px;
+      text-align: left;
+      font-weight: 500;
+      font-size: 15px;
+    }
+  }
+}
+.ripple-parent {
+  position: relative;
+  overflow: hidden;
+}
+.search-bar {
+  padding: 0 !important;
+  margin: 0px 12px;
+  width: 94%;
+  height: 35px;
+  overflow: hidden;
+  border: 1px solid #e2e2e2;
+  border-radius: 5px;
+  --background: var(--ion-color-light-tint);
+  --box-shadow: unset;
+  --border-radius: 5px;
+  --icon-color: grey;
+  --cancel-button-color: grey;
+  --clear-button-color: grey;
+  input {
+    font-size: small !important;
+    padding-left: 30px !important;
+    padding-right: 30px !important;
+  }
+  ion-icon {
+    left: 7px !important;
+    top: 11px !important;
+    width: 15px !important;
+  }
+  button{
+    top: 13px !important;
+    height: 15px !important;
+  }
+}
+.filter {
+  height: 35px !important;
+  background: #f5f6f9;
+  border-radius: 5px;
+  border: 1px solid #e2e2e2;
+  font-size: 12px !important;
+  margin-right: 8px !important;
+  text-transform: capitalize;
+  ion-icon {
+    margin-right: 7px;
+  }
+}
+.filter-modal .modal-wrapper {
+  height: 50%;
+  top: 50%;
+  position: absolute; 
+  display: block;  
+}
+.p-card{
+  outline: none;
+  border-radius: 5px;
+  box-shadow: 1px 1px 0px var(--ion-color-light-tint),
+    1px -1px 0px var(--ion-color-light-tint),
+    -1px -1px 0px var(--ion-color-light-tint),
+    -1px 1px 0px var(--ion-color-light-tint),
+    2px 2px 5px var(--ion-color-light-tint);
+}
+ion-button{
+  text-transform: capitalize;
+}
+.vertical-layout{
+  h4{
+    font-size: 18px;
+  }
+  .dairy-card{
+    margin-bottom: 20px;
+  }
+}

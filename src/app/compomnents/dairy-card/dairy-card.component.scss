@@ -1,0 +1,77 @@
+.item-card {
+  cursor: pointer;
+  overflow: hidden;
+  margin-right: 1px;
+  margin-left: 1px;
+  outline: none;
+  ion-grid {
+    padding: 0;
+    ion-row {
+      ion-col {
+        .color-unset {
+          color: unset !important;
+        }
+        p {
+          margin: 0%;
+          padding: 0;
+        }
+        padding: 0;
+        .item-img {
+          border-radius: 5px;
+          height: 110px;
+        }
+        .item-details {
+          padding: 5px 10px;
+          h6 {
+            font-size: 85%;
+            margin: 0;
+            margin-bottom: 1%;
+            padding-right: 18px;
+            text-transform: capitalize;
+          }
+          span {
+            font-size: 13px;
+            margin: 0;
+            margin-bottom: 5px;
+            color: var(--ion-color-medium-shade);
+          }
+          .prize {
+            color: var(--ion-color-primary);
+            font-weight: 500;
+            font-size: 90%;
+          }
+          .rating {
+            position: absolute;
+            right: 5px;
+            color: #0bc734;
+            font-size: 75%;
+            padding: 2px 6px;
+            background: #caf7ca75;
+            border-radius: 3px;
+          }
+          .status {
+            color: var(--ion-color-secondary);
+            margin-top: 0px;
+            text-transform: lowercase;
+            position: absolute;
+            bottom: 5px;
+            font-size: 80%;
+          }
+        }
+        .add-btn {
+          position: absolute;
+          right: 5px;
+          bottom: 5px;
+          font-size: 75%;
+          text-transform: capitalize;
+          height: 22%;
+          background: rgba(var(--ion-color-secondary-rgb), 0.15);
+          border-radius: 3px;
+          z-index: 100;
+          margin: 0;
+        }
+      }
+
+    }
+  }
+}

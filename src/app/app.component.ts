@@ -10,12 +10,14 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
   styleUrls: ['app.component.scss']
 })
 export class AppComponent {
+  navigate;
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
     private statusBar: StatusBar
   ) {
     this.initializeApp();
+    this.sideMenu();
   }
 
   initializeApp() {
@@ -24,4 +26,34 @@ export class AppComponent {
       this.splashScreen.hide();
     });
   }
+
+  sideMenu() {
+    this.navigate = [
+      {
+        title: "All Tasks",
+        url: "/home/all",
+      },
+      {
+        title: "Due Tasks",
+        url: "/home/due",
+      },
+      {
+        title: "Finished Tasks",
+        url: "/home/com",
+      },
+      {
+        title: "Performance",
+        url: "/register",
+      },
+      {
+        title: "Ask Queries",
+        url: "/queries",
+      },
+      {
+        title: "About",
+        url: "/about",
+      },
+    ];
+  }
+
 }

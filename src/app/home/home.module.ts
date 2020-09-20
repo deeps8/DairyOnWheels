@@ -5,6 +5,9 @@ import { FormsModule } from '@angular/forms';
 import { HomePage } from './home.page';
 
 import { HomePageRoutingModule } from './home-routing.module';
+import { ScrollVanishDirective } from '../directives/scroll-vanish.directive';
+import { ComponentsModule } from '../compomnents/compoments.module';
+// import { DairyCardComponent } from '../compomnents/dairy-card/dairy-card.component';
 
 
 @NgModule({
@@ -12,8 +15,9 @@ import { HomePageRoutingModule } from './home-routing.module';
     CommonModule,
     FormsModule,
     IonicModule,
+    ComponentsModule,
     HomePageRoutingModule
   ],
-  declarations: [HomePage]
+  declarations: [HomePage,ScrollVanishDirective]
 })
 export class HomePageModule {}

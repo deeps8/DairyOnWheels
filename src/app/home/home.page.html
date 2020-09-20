@@ -1,20 +1,145 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
+<!-- header ios for all platforms -->
+<ion-header mode="ios">
+  <ion-toolbar [myScrollVanish]="scrollArea">
+    <ion-buttons slot="start" class="ion-no-margin">
+      <ion-menu-button color="primary"></ion-menu-button>
+      <ion-icon class="geo" name="location" color="primary"></ion-icon>
+    </ion-buttons>
     <ion-title>
-      Blank
+      <ion-input placeholder="Select location"></ion-input>
     </ion-title>
+    <ion-buttons slot="end" class="ion-no-margin">
+      <ion-button mode="md" color="primary">
+        <ion-icon name="notifications-outline"></ion-icon>
+      </ion-button>
+      <ion-button mode="md" color="primary">
+        <ion-icon name="cart-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<!-- toolbar for search and filters -->
+<ion-toolbar mode="md">
+  <ion-searchbar mode="md" class="search-bar" placeholder="Search for dairy"></ion-searchbar>
+  <ion-buttons slot="end">
+    <ion-button class="filter" (click)="presentFilterModal()">
+      <ion-icon name="options-outline"></ion-icon>
+      Filter
+    </ion-button>
+  </ion-buttons>
+</ion-toolbar>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+<!-- content of the home screen -->
+<ion-content #scrollArea scrollEvents="true">
+  <ion-grid>
+    <ion-row>
+      <ion-col size-lg="4" size-xl="4" size-md="6" offset-md="3" offset-lg="4" offset-xl="4">
+        <div class="container" *ngIf="loading">
+
+          <!-- offers and promo -->
+          <section class="promo">
+            <ion-slides [options]="{ slidesPerView: 'auto', zoom: false, grabCursor: true }">
+              <ion-slide *ngFor="let card of [0,1,2,3]" class="offers-slide ion-activatable ripple-parent">
+                <div class="offers">
+                  <span>Exclusive</span>
+                  <div class="offer-data">
+                    <h2>Offers for new customers</h2>
+                    <p>Get your product with 20% off</p>
+                  </div>
+                  <ion-ripple-effect></ion-ripple-effect>
+                </div>
+              </ion-slide>
+            </ion-slides>
+          </section>
+
+
+          <!-- features like top category and all-->
+          <div class="top-features">
+            <div class="features">
+              <div>
+                <img src="https://img.icons8.com/color/96/000000/coconut-milk.png" />
+                <span>Milk</span>
+              </div>
+              <div>
+                <img src="https://img.icons8.com/color/96/000000/group-of-vegetables.png" />
+                <span>Vegetables</span>
+              </div>
+              <div>
+                <img src="https://img.icons8.com/color/96/000000/yogurt.png" />
+                <span>Curd</span>
+              </div>
+              <div>
+                <img src="https://img.icons8.com/fluent/48/000000/bottle-of-water.png" />
+                <span>Water</span>
+              </div>
+              <div>
+                <img src="https://img.icons8.com/color/96/000000/almond-butter.png" />
+                <span>Butter</span>
+              </div>
+              <div>
+                <img src="https://img.icons8.com/emoji/96/000000/bread-emoji.png" />
+                <span>Bread</span>
+              </div>
+              <div>
+                <img src="https://img.icons8.com/color/96/000000/ice-cream-bowl.png" />
+                <span>Ice Cream</span>
+              </div>
+              <div>
+                <img src="https://img.icons8.com/doodle/96/000000/eggs--v1.png" />
+                <span>Eggs</span>
+              </div>
+
+            </div>
+          </div>
+
+
+          <div class="horizontal-layout">
+            <h4>Dairy Product - horizontal view</h4>
+            <section>
+              <div class="dairy-card p-card" *ngFor="let item of productDetails">
+                <dairy-card [details]="item"></dairy-card>
+              </div>
+            </section>
+          </div>
+
+
+          <div class="vertical-layout">
+            <h4>Dairy Product - vertical view</h4>
+            <div>
+              <div class="dairy-card p-card" *ngFor="let item of productDetails">
+                <dairy-card [details]='item' ></dairy-card>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+        <!-- container end -->
+
+        <div class="skeleton-loading" *ngIf="!loading">
+          <div class="ion-padding-horizontal custom-skeleton">
+            <!-- offers -->
+            <div class="skl-offers">
+              <ion-skeleton-text animated style="width: 100%;height: 100px;border-radius: 5px;"></ion-skeleton-text>
+            </div>
+
+            <!-- <div class="features" style="display: flex;" >
+              <ion-skeleton-text *ngFor="let item of [1,2,3,4,5]" animated style="width: 20%;height: 40px;" class="ion-margin-horizontal"></ion-skeleton-text>
+            </div> -->
+
+            <div class="products">
+              <div>
+                <div *ngFor="let item of [1,2,3,4,5]">
+                  <ion-skeleton-text animated style="width: 100%;height: 110px;border-radius: 5px;" class="ion-margin-vertical"></ion-skeleton-text>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

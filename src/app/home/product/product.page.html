@@ -1,0 +1,65 @@
+
+<ion-toolbar [myScrollVanish]="scrollArea" >
+  <ion-buttons slot="start">
+    <ion-back-button defaultHref="home"></ion-back-button>
+  </ion-buttons>
+  <ion-title>Product</ion-title>
+</ion-toolbar>
+
+<ion-content #scrollArea scrollEvents="true" >
+  <ion-grid>
+    <ion-row>
+      <ion-col size-lg="4" size-xl="4" size-md="6" offset-md="3" offset-lg="4" offset-xl="4">
+        <div class="container" *ngIf="loading">
+          <div>
+            <dairy-card [details]="productDetails" ></dairy-card>
+          </div>
+          <div class="product-desc">
+            <h4 class="desc-header" >Description</h4>
+            <p class="desc" >{{productDetails.productDescription}}</p>
+            <p class="desc" >There should be more description about Product like : Seller Shop location , Quality , any offer or something</p>
+          </div>
+          <div class="action-btns">
+            <ion-buttons>
+                <ion-button expand="full" fill="solid" color="primary" >Add to cart</ion-button>
+                <ion-button expand="full" fill="solid" color="secondary">Order</ion-button>
+            </ion-buttons>
+          </div>
+
+          <div class="vertical-layout ion-padding" *ngIf="extraloading" >
+            <h4>Products you may like</h4>
+            <div>
+              <div class="dairy-card p-card" *ngFor="let item of products" >
+                <dairy-card [details]='item' ></dairy-card>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="skeleton-loading" *ngIf="!loading">
+          <div class="ion-padding custom-skeleton">
+            <!-- offers -->
+            <div class="skl-offers">
+              <ion-skeleton-text animated style="width: 100%;height: 100px;border-radius: 5px;"></ion-skeleton-text>
+            </div>
+
+            <!-- <div class="features" style="display: flex;" >
+              <ion-skeleton-text *ngFor="let item of [1,2,3,4,5]" animated style="width: 20%;height: 40px;" class="ion-margin-horizontal"></ion-skeleton-text>
+            </div> -->
+
+            <div class="products">
+              <div>
+                <div *ngFor="let item of [1,2,3,4,5]">
+                  <ion-skeleton-text animated style="width: 100%;height: 110px;border-radius: 5px;" class="ion-margin-vertical"></ion-skeleton-text>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>        
+</ion-content>

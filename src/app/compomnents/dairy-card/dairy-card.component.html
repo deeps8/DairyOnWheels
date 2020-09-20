@@ -1,0 +1,30 @@
+<div class="item-card ion-activatable ripple-parent " >
+  <ion-grid>
+    <ion-row>
+      <ion-col size="4">
+        <ion-img class="item-img"
+          [src]="details.productImage">
+        </ion-img>
+      </ion-col>
+      <ion-col size="8">
+        <div class="item-details" (click)="routeTo('/home/product',details.productId)">
+          
+          <span class="rating" >{{details.productRating}}</span>
+
+          <h6>{{details.productName}} , {{removeUnder(details.brandCategory)}}</h6>
+
+          <p class="prize color-unset">{{getWeight(details.productPackagingWeight)}}</p>
+
+          <p class="prize">{{details.productPrice}} Rs</p>
+
+          <span>jyoti dairy</span>
+
+          <p class="status" >{{details.productAvailability}}</p>
+
+        </div>
+        <ion-button class="add-btn" fill="clear" color="secondary"> Add + </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-ripple-effect></ion-ripple-effect>
+</div>
