@@ -1,0 +1,74 @@
+<div class="item-card ion-activatable ripple-parent " >
+  <ion-grid>
+    <ion-row *ngIf="(type === 'product')" >
+      <ion-col size="4" (click)="routeTo('/home/product',details.productId)">
+        <ion-img class="item-img"
+          [src]="details.productImage">
+        </ion-img>
+      </ion-col>
+      <ion-col size="8">
+        <div class="item-details" (click)="routeTo('/home/product',details.productId)">
+          
+          <span class="rating" ><ion-icon name="star"></ion-icon> <span style="color: inherit;" >{{details.productRating}}</span></span>
+
+          <h6>{{details.productName}} , {{removeUnder(details.brandCategory)}}</h6>
+
+          <p class="prize color-unset">{{getWeight(details.productPackagingWeight)}}</p>
+
+          <p class="prize">{{details.productPrice}} Rs</p>
+
+          <span>jyoti dairy</span>
+
+          <p class="status" >{{details.productAvailability}}</p>
+
+        </div>
+      </ion-col>
+    </ion-row>
+
+    <ion-row *ngIf="(type==='cart')" >
+      <ion-col size="12" >
+        <div class="item-details" (click)="routeTo('/home/product',details.productId)">
+          
+          <h6>{{details.productName}} , {{removeUnder(details.brandCategory)}}</h6>
+          
+          <span>jyoti dairy</span>
+
+          <div class="cart-style">
+            <p class="prize color-unset">{{getWeight(details.productPackagingWeight)}}</p>
+
+            <p class="prize">{{details.productPrice}} Rs</p>
+          
+            <p class="status" >{{details.productAvailability}}</p>
+
+          </div>
+          
+
+        </div>
+      </ion-col>
+    </ion-row>
+
+    <div class="btns">
+      <ion-button class="add-btn" [class]="type"
+                  (click)="addItemVcart(true)" 
+                  *ngIf="!checkInCart()" 
+                  fill="clear" 
+                  color="secondary"> Add + </ion-button> 
+                  
+      <div *ngIf="checkInCart()" class="add-btn count-btn" [class]="type" >
+        <ion-button class="add-del-btn" 
+                  (click)="addItemVcart(false)"
+                  *ngIf="checkInCart()" 
+                  fill="clear" 
+                  color="secondary"><ion-icon name="remove-outline" alt="-"></ion-icon></ion-button>
+        <span>{{getItemCount()}}</span>
+        <ion-button class="add-del-btn" 
+                  (click)="addItemVcart(true)"
+                  *ngIf="checkInCart()" 
+                  fill="clear" 
+                  color="secondary"><ion-icon name="add-outline" alt="+" ></ion-icon></ion-button>         
+      </div>
+    </div>
+
+  </ion-grid>
+  <ion-ripple-effect></ion-ripple-effect>
+</div>

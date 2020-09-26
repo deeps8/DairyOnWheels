@@ -7,8 +7,8 @@ import { IonicModule } from '@ionic/angular';
 import { ProductPageRoutingModule } from './product-routing.module';
 
 import { ProductPage } from './product.page';
-import { ComponentsModule } from 'src/app/compomnents/compoments.module';
-import { ScrollVanishDirective } from 'src/app/directives/scroll-vanish.directive';
+import { ComponentsModule } from 'src/app/components/components.module';
+import { DirectivesModule } from 'src/app/directives/directives.module';
 
 @NgModule({
   imports: [
@@ -16,8 +16,9 @@ import { ScrollVanishDirective } from 'src/app/directives/scroll-vanish.directiv
     FormsModule,
     IonicModule,
     ComponentsModule,
+    DirectivesModule,
     ProductPageRoutingModule
   ],
-  declarations: [ProductPage,ScrollVanishDirective]
+  declarations: [ProductPage]
 })
 export class ProductPageModule {}

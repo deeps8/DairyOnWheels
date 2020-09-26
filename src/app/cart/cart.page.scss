@@ -1,0 +1,77 @@
+ion-content {
+  ion-grid {
+    padding: 0;
+    ion-row {
+      ion-col {
+        padding: 0;
+        .dairy-card {
+          margin: 0;
+          box-shadow: unset;
+          flex: none;
+          font-size: 100%;
+          padding: 6px 2px;
+          border-radius: 0;
+          background: #f5f6f978;
+          border-bottom: 1px solid var(--ion-color-light-shade);
+        }
+        .totals {
+          .apply-coupon {
+            margin: 10px 0;
+            ion-button {
+              text-align: left;
+              background: rgba(var(--ion-color-primary-rgb), 0.1);
+              margin: 0;
+              font-weight: 400;
+              height: 45px;
+            }
+            .btn-text {
+              width: fit-content;
+              margin-right: auto;
+            }
+          }
+          .bill-amount {
+            padding: 12px;
+            margin: 10px 0;
+            background: #fafbfc;
+            h6 {
+              font-size: 16px;
+              font-weight: 500;
+              margin: 0;
+              margin-bottom: 5px;
+            }
+            .bill-list {
+              display: flex;
+              flex-direction: row;
+              font-size: 13px;
+              padding: 10px 0;
+              .detailed {
+                display: flex;
+                flex-direction: column;
+                flex: 1;
+                padding-right: 50px;
+                span {
+                  color: var(--ion-color-medium);
+                  font-weight: 300;
+                  font-size: 11px;
+                  line-height: 16px;
+                }
+              }
+              p {
+                margin: 0;
+                flex: 1;
+                margin-bottom: 2px;
+                font-weight: 400;
+              }
+              span {
+                font-weight: 500;
+              }
+            }
+            .border-line {
+              border-bottom: 1px solid #ddd;
+            }
+          }
+        }
+      }
+    }
+  }
+}

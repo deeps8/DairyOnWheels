@@ -1,10 +1,11 @@
-
+<ion-header mode="ios">
 <ion-toolbar [myScrollVanish]="scrollArea" >
-  <ion-buttons slot="start">
+  <ion-buttons slot="start" mode="md" >
     <ion-back-button defaultHref="home"></ion-back-button>
   </ion-buttons>
   <ion-title>Product</ion-title>
 </ion-toolbar>
+</ion-header>
 
 <ion-content #scrollArea scrollEvents="true" >
   <ion-grid>
@@ -12,7 +13,7 @@
       <ion-col size-lg="4" size-xl="4" size-md="6" offset-md="3" offset-lg="4" offset-xl="4">
         <div class="container" *ngIf="loading">
           <div>
-            <dairy-card [details]="productDetails" ></dairy-card>
+            <dairy-card [details]="productDetails" type="product" ></dairy-card>
           </div>
           <div class="product-desc">
             <h4 class="desc-header" >Description</h4>
@@ -30,7 +31,7 @@
             <h4>Products you may like</h4>
             <div>
               <div class="dairy-card p-card" *ngFor="let item of products" >
-                <dairy-card [details]='item' ></dairy-card>
+                <dairy-card [details]='item' type="product" ></dairy-card>
               </div>
             </div>
           </div>
@@ -63,3 +64,4 @@
     </ion-row>
   </ion-grid>        
 </ion-content>
+<cart-toast type="checkout" ></cart-toast>

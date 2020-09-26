@@ -1,0 +1,40 @@
+.toast {
+  font-size: 80%;
+  height: 0px;
+  transition: all 0.5s;
+  ion-grid {
+    padding: 0;
+    ion-row {
+      ion-col {
+        padding: 0;
+        .cart-details {
+          padding: 8px 12px;
+          text-align: left;
+          p {
+            margin: 5px 0;
+            word-spacing: 3px;
+            span {
+              color: var(--ion-color-primary);
+              font-weight: 600;
+            }
+          }
+        }
+        .checkout {
+          text-align: right;
+          font-size: 13px;
+          ion-button {
+              font-size: 100%;
+            ion-icon {
+              margin-left: 10px;
+              font-size: 18px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.showToast{
+    height: 44px;
+    transition: all 0.5s;
+}

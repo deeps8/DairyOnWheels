@@ -1,9 +1,72 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>cart</ion-title>
+<ion-header mode="ios">
+  <ion-toolbar [myScrollVanish]="scrollArea">
+    <ion-buttons slot="start" mode="md">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>My Cart</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content #scrollArea scrollEvents="true">
+  <ion-grid>
+    <ion-row>
+      <ion-col size-lg="4" size-xl="4" size-md="6" offset-md="3" offset-lg="4" offset-xl="4">
+        <div *ngIf="productService.virtualCartItems.length > 0" >
+          <div class="dairy-card p-card" *ngFor="let cartItem of productService.virtualCartItems" >
+            <dairy-card [details]="cartItem.product" type="cart" ></dairy-card>
+          </div>
+          
+          <!-- total amount with tax / offers and apply coupon -->
+          <div class="totals" >
+            <div class="apply-coupon ion-margin-vertical">
+                <ion-button color="primary" text-left  expand="block" fill="clear">
+                  <span  class="btn-text" >Apply Coupon</span> 
+                  <ion-icon name="chevron-forward-outline"></ion-icon>
+                </ion-button>
+            </div>
+            <div class="bill-amount ion-margin-vertical">
+              <h6>Bill Details</h6>
+              <div class="bill-list border-line" >
+                <p>Total Items</p>
+                <span>{{countItems()}}</span>
+              </div>
+              <div class="bill-list border-line" >
+                <p>Item Total</p>
+                <span>{{calCost()}} Rs per day</span>
+              </div>
+              <div class="bill-list border-line" >
+                <div class="detailed" >
+                  <p>Delivery charges <ion-icon name="information-circle-outline"></ion-icon> </p>
+                  <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi, eveniet eius quaerat consectetur laudantium repellat facilis</span> 
+                </div>
+                <span>0.00 Rs</span>
+              </div>
+              <div class="bill-list border-line" >
+                <p>Taxes and Charges  <ion-icon name="information-circle-outline"></ion-icon> </p>
+                <span>0.00 Rs</span>
+              </div>
+              <div class="bill-list" >
+                <p>Amount to Pay</p>
+                <ion-text color="primary">
+                  <span>{{calCost()}} Rs per day</span>            
+                </ion-text>
+              </div>
+            </div>
+          </div>
+        </div>
 
+        <!-- if no item in cart -->
+        <div *ngIf="productService.virtualCartItems.length == 0" class="no-items" >
+          <div>
+
+            <h2>Your Cart is empty</h2>
+            <ion-button [routerLink]="['/home']" color="primary">
+              <ion-icon name="cart"></ion-icon> Keep Shopping
+            </ion-button>
+          </div>
+        </div> 
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
+<cart-toast type="orderslot" ></cart-toast>

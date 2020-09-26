@@ -1,13 +1,14 @@
-<ion-tabs>
+<ion-tabs (ionTabsDidChange) = "tabChanged($event)" >
 
-  <ion-tab-bar slot="bottom">
-    <ion-tab-button tab="home">
-      <ion-icon name="triangle"></ion-icon>
+  <ion-tab-bar  slot="bottom" style="height: 45px;" >
+    <ion-tab-button   tab="home">
+      <ion-icon name="restaurant"></ion-icon>
       <ion-label>Home</ion-label>
     </ion-tab-button>
 
     <ion-tab-button tab="cart">
-      <ion-icon name="ellipse"></ion-icon>
+      <ion-icon name="cart"></ion-icon>
+      <ion-badge style="padding:2px 4px;" *ngIf="!(countItems() == 0) && inCartTab" color="secondary">{{countItems()}}</ion-badge>
       <ion-label>Cart</ion-label>
     </ion-tab-button>
 

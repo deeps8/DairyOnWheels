@@ -35,6 +35,10 @@ ion-header {
     }
   }
 }
+.header-ios ion-toolbar:last-of-type {
+  --border-width: 0 !important;
+}
+
 .ripple-parent {
   position: relative;
   overflow: hidden;
@@ -63,7 +67,7 @@ ion-header {
     top: 11px !important;
     width: 15px !important;
   }
-  button{
+  button {
     top: 13px !important;
     height: 15px !important;
   }
@@ -83,10 +87,10 @@ ion-header {
 .filter-modal .modal-wrapper {
   height: 50%;
   top: 50%;
-  position: absolute; 
-  display: block;  
+  position: absolute;
+  display: block;
 }
-.p-card{
+.p-card {
   outline: none;
   border-radius: 5px;
   box-shadow: 1px 1px 0px var(--ion-color-light-tint),
@@ -95,14 +99,50 @@ ion-header {
     -1px 1px 0px var(--ion-color-light-tint),
     2px 2px 5px var(--ion-color-light-tint);
 }
-ion-button{
+
+// capitalizing the ion-button text
+ion-button {
   text-transform: capitalize;
 }
-.vertical-layout{
-  h4{
+
+.vertical-layout {
+  h4 {
     font-size: 18px;
   }
-  .dairy-card{
+  .dairy-card {
     margin-bottom: 20px;
+  }
+}
+
+// back button stylying
+ion-buttons {
+  ion-back-button {
+    --icon-font-size: 18px;
+    --color: var(--ion-color-primary);
+    --icon-font-weight: 200;
+    --padding-start: 0;
+    --padding-end: 0;
+    min-width: 30px;
+    height: 20px;
+  }
+}
+
+cart-toast {
+  background: var(--ion-color-dark);
+  color: white;
+}
+.no-items {
+  display: grid;
+  place-items: center;
+  height: 60vh;
+  text-align: center;
+
+  h2 {
+    font-weight: 300;
+    font-size: 20px;
+  }
+  ion-button {
+    --box-shadow: unset;
+    font-weight: 400;
   }
 }

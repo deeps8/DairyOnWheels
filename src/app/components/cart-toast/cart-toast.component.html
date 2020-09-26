@@ -1,0 +1,23 @@
+<div class="toast"  [ngClass]="{showToast: !(countItems() == 0)}" >
+  <ion-grid *ngIf="!(countItems() == 0)" >
+    <ion-row >
+      <ion-col size="6">
+
+          <div class="cart-details" *ngIf="type==='checkout'" >
+            <p> <span>{{countItems()}}</span> Items added to cart </p>
+          </div>
+
+          <div class="cart-details" *ngIf="type==='orderslot'" >
+            <p> <span>{{countItems()}}</span> Items  <span>{{calCost()}} Rs </span> per Day</p>
+          </div>
+    
+      </ion-col>
+      <ion-col size="6">
+        <div class="checkout">
+            <ion-button *ngIf="type==='checkout'" fill="clear"  (click)="router.navigate(['/cart'])"   >Checkout <ion-icon slot="end" name="arrow-forward"></ion-icon></ion-button>
+            <ion-button *ngIf="type==='orderslot'" fill="clear"  (click)="router.navigate(['/cart','order'])"   >Place Order <ion-icon slot="end" name="arrow-forward"></ion-icon></ion-button>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>      
+</div>

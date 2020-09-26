@@ -98,7 +98,7 @@
             <h4>Dairy Product - horizontal view</h4>
             <section>
               <div class="dairy-card p-card" *ngFor="let item of productDetails">
-                <dairy-card [details]="item"></dairy-card>
+                <dairy-card [details]="item" type="product" ></dairy-card>
               </div>
             </section>
           </div>
@@ -108,7 +108,7 @@
             <h4>Dairy Product - vertical view</h4>
             <div>
               <div class="dairy-card p-card" *ngFor="let item of productDetails">
-                <dairy-card [details]='item' ></dairy-card>
+                <dairy-card [details]='item' type="product" ></dairy-card>
               </div>
             </div>
           </div>
@@ -124,9 +124,6 @@
               <ion-skeleton-text animated style="width: 100%;height: 100px;border-radius: 5px;"></ion-skeleton-text>
             </div>
 
-            <!-- <div class="features" style="display: flex;" >
-              <ion-skeleton-text *ngFor="let item of [1,2,3,4,5]" animated style="width: 20%;height: 40px;" class="ion-margin-horizontal"></ion-skeleton-text>
-            </div> -->
 
             <div class="products">
               <div>
@@ -143,3 +140,4 @@
     </ion-row>
   </ion-grid>
 </ion-content>
+<cart-toast type="checkout" ></cart-toast>

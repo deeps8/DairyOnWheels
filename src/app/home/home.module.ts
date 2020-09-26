@@ -5,9 +5,8 @@ import { FormsModule } from '@angular/forms';
 import { HomePage } from './home.page';
 
 import { HomePageRoutingModule } from './home-routing.module';
-import { ScrollVanishDirective } from '../directives/scroll-vanish.directive';
-import { ComponentsModule } from '../compomnents/compoments.module';
-// import { DairyCardComponent } from '../compomnents/dairy-card/dairy-card.component';
+import { ComponentsModule } from '../components/components.module';
+import { DirectivesModule } from '../directives/directives.module';
 
 
 @NgModule({
@@ -15,9 +14,10 @@ import { ComponentsModule } from '../compomnents/compoments.module';
     CommonModule,
     FormsModule,
     IonicModule,
+    DirectivesModule,
     ComponentsModule,
     HomePageRoutingModule
   ],
-  declarations: [HomePage,ScrollVanishDirective]
+  declarations: [HomePage]
 })
 export class HomePageModule {}
