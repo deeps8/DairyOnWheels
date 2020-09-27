@@ -1,0 +1,124 @@
+<ion-header mode="ios">
+  <ion-toolbar [myScrollVanish]="scrollArea">
+    <ion-buttons slot="start" mode="md">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Upload Product</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content #scrollArea scrollEvents="true">
+  <ion-grid>
+    <ion-row>
+      <ion-col size-lg="4" size-xl="4" size-md="6" offset-md="3" offset-lg="4" offset-xl="4">
+        <div class="upload-product" >
+          <div class="form-upload">
+            <form [formGroup]="uploadForm" (ngSubmit)="addProduct(uploadForm.value)">
+              
+              <ion-item>
+                <ion-label position="floating">Product Name</ion-label>
+                <ion-input required formControlName="productName" type="text"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label position="floating">Product Description</ion-label>
+                <ion-textarea 
+                          required 
+                          rows="2" cols="20"
+                          formControlName="productDescription" 
+                          type="text"></ion-textarea>
+              </ion-item>
+
+              <ion-item>
+                <ion-label position="floating">Product Image</ion-label>
+                <ion-input required formControlName="productImage" type="text"></ion-input>
+              </ion-item>
+
+              <ion-item>
+                <ion-label position="floating">Select Product Category</ion-label>
+                <ion-select required
+                            formControlName="productCategory"
+                            value="0"
+                            placeholder="">
+                  <ion-select-option value="0">Dairy</ion-select-option>
+                  <ion-select-option value="1">Vegetable</ion-select-option>
+                  <ion-select-option value="2">Water</ion-select-option>
+                </ion-select>
+              </ion-item>
+
+
+              <ion-item>
+                <ion-label position="floating">Add Discount if any</ion-label>
+                <ion-input required formControlName="discount" type="number"></ion-input>
+              </ion-item>
+
+
+              <ion-item>
+                <ion-label position="floating">Select Product Type</ion-label>
+                <ion-select required
+                            formControlName="productType"
+                            value="1"
+                            placeholder="Select One">
+                  <ion-select-option value="0">Raw Milk</ion-select-option>
+                  <ion-select-option value="1">Pasteurized Milk</ion-select-option>
+                  <ion-select-option value="2">Ghee</ion-select-option>
+                  <ion-select-option value="3">Curd</ion-select-option>
+                  <ion-select-option value="4">Yogurt</ion-select-option>
+                  <ion-select-option value="5">Ice Cream</ion-select-option>
+                  <ion-select-option value="6">Paneer</ion-select-option>
+                  <ion-select-option value="7">Cheese</ion-select-option>
+                </ion-select>
+              </ion-item>
+
+              <ion-item>
+                <ion-label position="floating">Select Brand Type</ion-label>
+                <ion-select required
+                            formControlName="brandType"
+                            value="1"
+                            placeholder="Select One">
+                  <ion-select-option value="0">In House</ion-select-option>
+                  <ion-select-option value="1">Amul</ion-select-option>
+                  <ion-select-option value="2">Sudha</ion-select-option>
+                  <ion-select-option value="3">Raaj</ion-select-option>
+                  <ion-select-option value="4">Mother Dairy</ion-select-option>
+                  <ion-select-option value="5">Others</ion-select-option>
+                </ion-select>
+              </ion-item>
+
+              <ion-item>
+                <ion-label position="floating">Select Product Weight</ion-label>
+                <ion-select required
+                            formControlName="productSizeVariant"
+                            value="0"
+                            placeholder="Select One">
+                  <ion-select-option value="0">200 Grams</ion-select-option>
+                  <ion-select-option value="1">250 Grams</ion-select-option>
+                  <ion-select-option value="2">500 Grams</ion-select-option>
+                  <ion-select-option value="3">1 Kilo Grams</ion-select-option>
+                  <ion-select-option value="4">2 Kilo Grams</ion-select-option>
+                  <ion-select-option value="5">5 Kilo Grams</ion-select-option>
+                </ion-select>
+              </ion-item>
+
+
+              <ion-item>
+                <ion-label position="floating">Set the Price in &#8377;</ion-label>
+                <ion-input required formControlName="productPrice" type="number"></ion-input>
+              </ion-item>
+
+              <ion-item>
+                <ion-label position="floating">Add the Inventory Count</ion-label>
+                <ion-input required formControlName="inventoryCount" type="number"></ion-input>
+              </ion-item>
+
+
+
+              <ion-button expand="full" size="large" color="secondary" type="submit" [disabled]="uploadForm.invalid">
+                Upload Product
+              </ion-button>
+            </form>
+          </div>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>      
+</ion-content>

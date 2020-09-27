@@ -30,20 +30,20 @@ export class AppComponent {
   sideMenu() {
     this.navigate = [
       {
-        title: "All Tasks",
-        url: "/home/all",
+        title: "Home",
+        url: "/home/",
       },
       {
-        title: "Due Tasks",
-        url: "/home/due",
+        title: "Add Product",
+        url: "/upload",
       },
       {
-        title: "Finished Tasks",
-        url: "/home/com",
+        title: "My Cart",
+        url: "/cart",
       },
       {
-        title: "Performance",
-        url: "/register",
+        title: "My Orders",
+        url: "/cart/order",
       },
       {
         title: "Ask Queries",

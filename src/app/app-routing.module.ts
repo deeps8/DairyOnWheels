@@ -14,6 +14,10 @@ const routes: Routes = [
   {
     path: 'home/product/:pid',
     loadChildren: () => import('./home/product/product.module').then( m => m.ProductPageModule)
+  },
+  {
+    path: 'upload',
+    loadChildren: () => import('./upload-product/upload-product.module').then( m => m.UploadProductPageModule)
   }
 ];
 

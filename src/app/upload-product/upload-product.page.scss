@@ -1,0 +1,14 @@
+.form-upload{
+    form{
+        ion-item{
+            margin-bottom:10px;
+            ion-label{
+                color: var(--ion-color-secondary);
+                font-size: 15px;
+            }
+            ion-input,ion-textarea,ion-select{
+                font-weight: 500;
+            }
+        }
+    }
+}

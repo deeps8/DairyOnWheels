@@ -9,6 +9,7 @@ export class ProductService {
   // urls
   ALL_PRODUCTS_URL: string = "https://damp-bayou-49178.herokuapp.com/product/showAll";
   PRODUCT_BY_ID: string = "https://damp-bayou-49178.herokuapp.com/product";
+  PRODUCT_UPLOAD: string = "https://damp-bayou-49178.herokuapp.com/api/product";
 
   // virtual cart vars
   virtualCartItems: Array<any> = [];
@@ -85,6 +86,19 @@ export class ProductService {
           );
       }
     }
+  }
+
+
+  // product upload 
+
+  uploadProduct(productDetails): Observable<any> {
+    let httpOptions = {
+      headers: new HttpHeaders({
+        "Content-Type": "application/json",
+      }),
+    };
+
+    return <any>this.http.post(this.PRODUCT_UPLOAD, productDetails ,httpOptions);
   }
 
 
